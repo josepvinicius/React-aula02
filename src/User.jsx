@@ -6,18 +6,18 @@ import './App.css';
 
 export default function Posts() {
 
-    const [posts, setPosts] = useState ([]);
+    const [users, setUsers] = useState ([]);
     const [loading, setLoading] = useState(false);
 
-   const buscarPosts = async () => {
+   const buscarUsers = async () => {
     setLoading(true);
 
     try{
-      const res = await axios.get("https://jsonplaceholder.typicode.com/posts");
+      const res = await axios.get("https://jsonplaceholder.typicode.com/users");
       
       await new Promise(resolve => setTimeout(resolve, 2000));
 
-      setPosts(res.data);
+      setUsers(res.data);
 
     } catch (err) {
       console.error("Erro ao bucar posts:", err);
@@ -29,7 +29,7 @@ export default function Posts() {
    };
 
    useEffect(() => {
-    buscarPosts();
+    buscarUsers();
 
    }, []);
 
@@ -38,7 +38,7 @@ export default function Posts() {
           <div className='container'>
             <h1>Posts</h1>
             <button 
-            onClick={buscarPosts}
+            onClick={buscarUsers}
             disabled={loading}>
               {loading ? "Carregando..." : "Recarregar"}
             </button>
@@ -50,10 +50,10 @@ export default function Posts() {
           
           <div className='posts'>
             <ul className='box'>
-            {posts.map(post => (
-                <li key={post.id}>
-                  <h3>{post.title}</h3>
-                  <p>{post.body}</p>
+            {users.map(user => (
+                <li key={user.id}>
+                  <h3>{user.name}</h3>
+                  <p>{user.data}</p>
                 </li>
                 ))}
           </ul>

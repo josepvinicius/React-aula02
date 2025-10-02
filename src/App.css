@@ -18,10 +18,70 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+.menu{
+  height: 40px;
+  width: 100%;
+  padding: 0;
+  background-color: #888;
+}
 
-li{
-  font-size: 30px;
-  margin-bottom: 10px;
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+h1{
+  font-size: 40px;
+  margin-right: 20px;
+}
+
+button{
+  background-color: #d8d8d8;
+  border: none;
+  transition: 0.2s ease-in-out;
+  padding: 10px 40px;
+  width: 180px;
+
+}
+
+button:hover{
+  background-color: #adabab;
+}
+
+h3{
+  font-size: 24px;
+}
+
+.carregando{
+  height: 50px;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -20px;
+}
+
+.carregando p{
+  font-size: 18px;
+  color: rgb(80, 80, 80);
+  font-weight: bold;
+}
+
+.posts{
+  padding: 10px;
+  background-color: #d8d8d8;
+  border-radius: 20px;
+  height: 100%;
+
+}
+
+.box{
+  display: flex;
+  flex-wrap: wrap;
+  
 }
 
 @keyframes logo-spin {
